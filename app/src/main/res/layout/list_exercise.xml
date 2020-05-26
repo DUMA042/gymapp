@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+<TextView
+    android:id="@+id/show_list"
+    style="@style/TextAppearance.AppCompat.Large"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="16dp"/>
+    <TextView
+        android:id="@+id/show_detials"
+        style="@style/TextAppearance.AppCompat.Large"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="12dp"/>
+
+    <TextView
+        android:id="@+id/show_details2"
+        style="@style/TextAppearance.AppCompat.Large"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="12dp"/>
+    <TextView
+        android:id="@+id/show_details3"
+        style="@style/TextAppearance.AppCompat.Large"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="12dp"/>
+
+
+    <!--COMPLETED (12) Add a View to the layout with a width of match_parent and a height of 1dp-->
+    <!--COMPLETED (13) Set the background color to #dadada-->
+    <!--COMPLETED (14) Set the left and right margins to 8dp-->
+    <!--This View serves as a visual divider between list items-->
+<View
+android:layout_width="match_parent"
+android:layout_height="1dp"
+android:background="#dadada"
+android:layout_marginLeft="8dp"
+android:layout_marginRight="8dp" />
+
+    </LinearLayout>

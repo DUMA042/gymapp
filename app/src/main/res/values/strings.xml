@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">gymapp</string>
+    <string name="profile_display">Profile</string>
+    <string name="profile_name">Name</string>
+    <string name="profile_gender">Gender</string>
+    <string name="profile_age">Age</string>
+    <string name="gender_unknown">Unknow</string>
+    <string name="gender_male">Male</string>
+    <string name="gender_female">Female</string>
+
+</resources>
