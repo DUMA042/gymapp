@@ -12,22 +12,29 @@
     android:padding="16dp"/>
     <TextView
         android:id="@+id/show_detials"
-        style="@style/TextAppearance.AppCompat.Large"
+        style="@style/TextAppearance.AppCompat.Medium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="12dp"/>
 
     <TextView
         android:id="@+id/show_details2"
-        style="@style/TextAppearance.AppCompat.Large"
+        style="@style/TextAppearance.AppCompat.Medium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="12dp"/>
     <TextView
         android:id="@+id/show_details3"
-        style="@style/TextAppearance.AppCompat.Large"
+        style="@style/TextAppearance.AppCompat.Medium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:id="@+id/show_clicked"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Click_To_add"
         android:padding="12dp"/>
 
 

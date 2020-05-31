@@ -49,9 +49,24 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter. CustomVie
 
     @Override
     public void onBindViewHolder(@NonNull CustomView holder, int position) {
+        String check="IT NOT";
+
        DataClass fill_in=mDataset.get(position);
+        if (fill_in.get_vegan()==1){
+            check="IT IS";
+        }
         holder.textView.setText(fill_in.get_name());
-       // holder.textView.setText(mDataset.indexOf(position));
+        holder.textView3.setText("Calories :"+fill_in.get_calories());
+
+        holder.textView2.setText("Protein :"+fill_in.get_protein());
+        holder.textView5.setText("Vegan :"+check);
+
+        if(fill_in.get_vegan()==0 && fill_in.get_protein()==0){
+            holder.textView2.setVisibility(View.GONE);
+            holder.textView5.setVisibility(View.GONE);
+            holder.textView3.setText("Description :"+fill_in.get_calories());
+        }
+
     }
 
     @Override
@@ -63,11 +78,21 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter. CustomVie
     public  class CustomView extends  RecyclerView.ViewHolder  implements View.OnClickListener {
 
         public TextView textView;
+        public TextView textView2;
+        public TextView textView3;
+        public  TextView textView4;
+        public TextView textView5;
 
 
         public CustomView(@NonNull View itemView) {
             super(itemView);
             textView=itemView.findViewById(R.id.show_list);
+            textView2=itemView.findViewById(R.id.show_detials);
+            textView3=itemView.findViewById(R.id.show_details2);
+            textView4=itemView.findViewById(R.id.show_details3);
+            textView5=itemView.findViewById(R.id.show_clicked);
+
+
             itemView.setOnClickListener(this);
         }
 

@@ -2,7 +2,7 @@ package com.example.gymapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -16,16 +16,20 @@ import com.example.gymapp.data.gymContract.blogEntry;
 import com.example.gymapp.data.gymContract.userEntry;
 import com.example.gymapp.data.gymDbHelper;
 
-import java.util.ArrayList;
-
 
 public class MainActivity extends AppCompatActivity {
     TextView displayView ;
     TextView displayView2;
     Button editprofile;
     Button temp_show_button;
-
+    Button temp_show_vegan;
+    Button button_show_Exercise;
+    String textEntered ;
     private gymDbHelper mDbHelper;
+    Context context = MainActivity.this;
+
+    /* This is the class that we want to start (and open) when the button is clicked. */
+    Class destinationActivity = NutritionActivity.class;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,12 +39,62 @@ public class MainActivity extends AppCompatActivity {
         displayView2=findViewById(R.id.text_view_result2);
         editprofile=findViewById(R.id.user_profile_button);
         temp_show_button=findViewById(R.id.temp_button);
-
-        temp_show_button.setOnClickListener(new View.OnClickListener() {
+        temp_show_vegan=findViewById(R.id.temp_button2);
+        button_show_Exercise=findViewById(R.id.temp_button4);
+        button_show_Exercise.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,ExerciseActivity.class);
                 startActivity(intent);
+            }
+        });
+        temp_show_vegan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                 textEntered ="1";
+
+
+                Intent startChildActivityIntent = new Intent(context, destinationActivity);
+
+                // COMPLETED (2) Use the putExtra method to put the String from the EditText in the Intent
+                /*
+                 * We use the putExtra method of the Intent class to pass some extra stuff to the
+                 * Activity that we are starting. Generally, this data is quite simple, such as
+                 * a String or a number. However, there are ways to pass more complex objects.
+                 */
+                startChildActivityIntent.putExtra(Intent.EXTRA_TEXT, textEntered);
+                startActivity(startChildActivityIntent);
+            }
+        });
+
+        temp_show_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                textEntered ="0";
+
+                /*
+                 * Storing the Context in a variable in this case is redundant since we could have
+                 * just used "this" or "MainActivity.this" in the method call below. However, we
+                 * wanted to demonstrate what parameter we were using "MainActivity.this" for as
+                 * clear as possible.
+                 */
+
+
+                /*
+                 * Here, we create the Intent that will start the Activity we specified above in
+                 * the destinationActivity variable. The constructor for an Intent also requires a
+                 * context, which we stored in the variable named "context".
+                 */
+                Intent startChildActivityIntent = new Intent(context, destinationActivity);
+
+                // COMPLETED (2) Use the putExtra method to put the String from the EditText in the Intent
+                /*
+                 * We use the putExtra method of the Intent class to pass some extra stuff to the
+                 * Activity that we are starting. Generally, this data is quite simple, such as
+                 * a String or a number. However, there are ways to pass more complex objects.
+                 */
+                startChildActivityIntent.putExtra(Intent.EXTRA_TEXT, textEntered);
+                startActivity(startChildActivityIntent);
             }
         });
         editprofile.setOnClickListener(new View.OnClickListener() {
@@ -71,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
         // to get a Cursor that contains all rows from the pets table.
         Cursor cursor2 = db.rawQuery("SELECT * FROM " + blogEntry.TABLE_NAME, null);
         Cursor cursor = db.rawQuery("SELECT * FROM " + userEntry.TABLE_NAME, null);
-        Cursor cursor3 = db.rawQuery("SELECT * FROM " +nutritionEntry.TABLE_NAME, null);
+       // Cursor cursor3 = db.rawQuery("SELECT * FROM " +nutritionEntry.TABLE_NAME, null);
 
         try {
             // Display the number of rows in the Cursor (which reflects the number of rows in the
@@ -102,6 +156,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                 displayView2.append("\n"+currentblogid +","+currentblog +", "+ currentblogdescription);
+
             }
 
 
@@ -110,6 +165,7 @@ public class MainActivity extends AppCompatActivity {
             // resources and makes it invalid.
             cursor.close();
             cursor2.close();
+
 
         }
     }

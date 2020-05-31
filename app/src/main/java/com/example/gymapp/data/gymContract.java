@@ -55,6 +55,22 @@ public class gymContract {
         public static final String COLUMN_Routie_Protein = "Routine_Total_Protein";
     }
 
+    public static class toolsEntry implements BaseColumns {
+        public static final String TABLE_NAME = "Tools";
+        /****/
+        public static final String _ID = BaseColumns._ID;
+        public static final String COLUMN_Tools_NAME = "Tools_Name";
+        public static final String COLUMN_Tools_Date = "Tools_date";
+        public static final String COLUMN_Tools_fat_Percentage = "fat_Percentage";
+        public static final String COLUMN_Tools_Height = "Tools_Height";
+        public static final String COLUMN_Tools_Weight = "Tools_Weight";
+        public static final String COLUMN_Tools_Body_mass = "Tools_Body_mass";
+        public static final String COLUMN_Tools_Calories_total = "Calories_total";
+        public static final String COLUMN_Tools_Nutrition_id = "Nutrition_id";
+        public static final String COLUMN_Tools_User_id = "User_id";
+    }
+
+
 
 
 

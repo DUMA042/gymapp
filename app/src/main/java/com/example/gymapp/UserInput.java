@@ -95,29 +95,26 @@ int age=Integer.parseInt(mage.getText().toString().trim());
        /**This value is for Execrise**/
        ContentValues values3 = new ContentValues();
 
-       values.put(userEntry.COLUMN_User_NAME, name);
+    /*   values.put(userEntry.COLUMN_User_NAME, name);
        values.put(userEntry.COLUMN_User_GENDER, mGender);
        values.put(userEntry.COLUMN_User_AGE, age);
        values1.put(blogEntry.COLUMN_Blog_NAME,"GGG");
        values1.put(blogEntry.COLUMN_Blog_DESCRIPTION,"er");
-       values2.put(exerciseEntry.COLUMN_Exercise_NAME,"RUN");
-      values2.put(exerciseEntry.COLUMN_Exercise_DESCRIPTION,"vvv");
+       values2.put(exerciseEntry.COLUMN_Exercise_NAME,"swam");
+      values2.put(exerciseEntry.COLUMN_Exercise_DESCRIPTION,"swam fast");*/
 
-       values3.put(nutritionEntry.COLUMN_Nutrition_NAME,"Beef stew");
-       values3.put(nutritionEntry.COLUMN_Nutrition_Calories,"600 gm");
-       values3.put(nutritionEntry.COLUMN_Nutrition_Vegan, 0);
-       values3.put(nutritionEntry.COLUMN_Nutrition_Protein, 45);
+
 
        if (age<=0 || age>150){
            Toast.makeText(this, "Error in  saving  data check your Age !", Toast.LENGTH_SHORT).show();
 
        }
 else{
-            db.insert(blogEntry.TABLE_NAME, null, values1);
-    db.insert(userEntry.TABLE_NAME, null, values);
-           newRowId =  db.insert(nutritionEntry.TABLE_NAME, null, values3);
+           // db.insert(blogEntry.TABLE_NAME, null, values1);
+   newRowId= db.insert(userEntry.TABLE_NAME, null, values);
+         //  newRowId =  db.insert(nutritionEntry.TABLE_NAME, null, values3);
 
-           db.insert(exerciseEntry.TABLE_NAME, null, values2);
+          // db.insert(exerciseEntry.TABLE_NAME, null, values2);
 
 
 

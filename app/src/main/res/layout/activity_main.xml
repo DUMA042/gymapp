@@ -30,7 +30,51 @@
         android:id="@+id/temp_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Excercise list" />
+        android:text="Nutrition list" />
+
+    <Button
+        android:id="@+id/temp_button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nutrition NON Vegan list" />
+
+    <Button
+        android:id="@+id/temp_button4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="EXERCISE" />
+    <Button
+        android:id="@+id/temp_button5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ROUTINE" />
+    <Button
+        android:id="@+id/temp_button6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TOOLS" />
+
+    <Button
+        android:id="@+id/temp_button7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="LARGEST WEIGHT" />
+
+    <Button
+        android:id="@+id/temp_button8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="BLOG" />
+
+    <Button
+        android:id="@+id/temp_button9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ALL HEIGHT" />
+
+
+
+
 
 
 </LinearLayout>

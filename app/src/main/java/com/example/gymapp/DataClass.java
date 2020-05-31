@@ -1,11 +1,10 @@
 package com.example.gymapp;
 
 public class DataClass {
-    private String name;
-    private String details;
-    private String calories;
-    private int vegan;
-    private int protein;
+    private String name="NULL";
+    private String calories="NULL";
+    private int vegan=0;
+    private int protein=0;
 
     public DataClass(String name1,String calories1,int vegan1,int protein1 ){
         name=name1;
@@ -16,8 +15,8 @@ public class DataClass {
     public String get_name(){
         return  name;
     }
-    public String get_details(){
-        return  name;
+    public String get_calories(){
+        return  calories;
     }
     public int get_vegan(){
         return  vegan;
